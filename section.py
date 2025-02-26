@@ -12,3 +12,8 @@ matching_numbers = [
 
 # Print the result
 print("Numbers with 'vol ag' in Section:", matching_numbers)
+
+
+.up::after { content: " ⬆️"; color: red; }
+.down::after { content: " ⬇️"; color: green; }
+.no-change::after { content: " ➖"; color: gray; }
