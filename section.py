@@ -4,8 +4,11 @@ import json
 with open("data.json", "r") as file:
     data = json.load(file)
 
-# Find numbers where "Section" contains "vol ag"
-matching_numbers = [num for num, details in data.items() if "vol ag" in details.get("Section", "").lower()]
+# Find numbers where any list entry contains "vol ag"
+matching_numbers = [
+    num for num, sections in data.items() 
+    if any("vol ag" in section.lower() for section in sections)
+]
 
 # Print the result
 print("Numbers with 'vol ag' in Section:", matching_numbers)
